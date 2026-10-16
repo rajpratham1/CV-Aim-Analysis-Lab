@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Colour resources for the CV Aim Analysis Lab app.
+
+    cv_window_bg: matches the Compose dark background colour (#0D1B2A)
+    defined in theme/Color.kt → InkBg.  Used as the Activity window
+    background so that the screen is dark before the first Compose frame.
+-->
+<resources>
+    <color name="cv_window_bg">#0D1B2A</color>
+</resources>

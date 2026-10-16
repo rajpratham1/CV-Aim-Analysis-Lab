@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Application theme for CV Aim Analysis Lab.
+
+    KEY FIX: The original manifest used @android:style/Theme.Material.Light.NoActionBar
+    (LIGHT, white background) which crashed on Android 14 OEM devices (OxygenOS /
+    OnePlus) when used with activity-compose:1.10.0 + targetSdk=35, because newer
+    AndroidX Activity requires an app-defined theme to configure window attributes.
+
+    This file defines a DARK app theme that:
+      - Extends android:Theme.Material.NoActionBar (AOSP dark theme, API 21+,
+        no external library dependency, guaranteed on all devices).
+      - Sets windowBackground to the dark Compose surface colour (#0D1B2A) so
+        there is no white flash before the first Compose frame renders.
+      - Configures transparent system bars so enableEdgeToEdge() in MainActivity
+        can draw the Compose content behind them.
+-->
+<resources>
+
+    <!-- Primary application theme. Used in AndroidManifest.xml. -->
+    <style name="Theme.CvLab" parent="android:Theme.Material.NoActionBar">
+        <!-- Dark window background — matches Compose InkBg (#0D1B2A) -->
+        <item name="android:windowBackground">@color/cv_window_bg</item>
+        <!-- Transparent system bars so Compose draws edge-to-edge -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- White system-bar icons on dark background -->
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+</resources>
